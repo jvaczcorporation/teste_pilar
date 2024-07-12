@@ -1,0 +1,12 @@
+targets:
+  $default:
+    builders:
+      json_serializable:
+        generate_for:
+          - lib/**/*model*.dart
+        options:
+          create_to_json: true
+          explicit_to_json: true
+          field_rename: snake
+          generic_argument_factories: false
+          include_if_null: false
