@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
@@ -70,28 +72,24 @@ class _DetailPageState extends State<DetailPage> {
                           ),
               ),
               Positioned(
-                top: 30,
+                top: Platform.isIOS ? 56 : 30,
                 left: 10,
-                child: Row(
-                  children: [
-                    Container(
-                      decoration: BoxDecoration(
-                        color: AppTheme.primary.withOpacity(0.7),
-                        borderRadius: BorderRadius.circular(500),
-                      ),
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: InkWell(
-                          onTap: Modular.to.pop,
-                          child: const Icon(
-                            Icons.arrow_back_ios_new_rounded,
-                            color: Colors.white,
-                            size: 20,
-                          ),
-                        ),
+                child: InkWell(
+                  onTap: Modular.to.pop,
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: AppTheme.primary.withOpacity(0.7),
+                      borderRadius: BorderRadius.circular(500),
+                    ),
+                    child: const Padding(
+                      padding: EdgeInsets.all(8.0),
+                      child: Icon(
+                        Icons.arrow_back_ios_new_rounded,
+                        color: Colors.white,
+                        size: 20,
                       ),
                     ),
-                  ],
+                  ),
                 ),
               ),
             ],
