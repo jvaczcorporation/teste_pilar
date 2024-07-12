@@ -47,7 +47,7 @@ O projeto está estruturado utilizando a Clean Architecture. A Clean Architectur
 
 1. **Presentation Layer:**
 
-   - Contém as views, stores, controllers e widgets.
+- Contém as views, stores, controllers e widgets.
 
 2. **Domain Layer:**
 
